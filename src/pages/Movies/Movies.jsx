@@ -2,9 +2,9 @@ import { useState, useEffect } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import { getFilmsByKey } from 'api/getFilmsByKey';
 import { MoviesList } from 'components/MoviesList/MoviesList';
-import { toast } from 'react-toastify';
 import { Box } from 'components/ui/Box';
 import { Searchbar } from 'components/Searchbar/Searchbar';
+import Notiflix from 'notiflix';
 
 const Movies = () => {
   const [searchParams, setSearchParams] = useSearchParams();
@@ -28,7 +28,7 @@ const Movies = () => {
 
   const handlerSubmit = value => {
     if (value.query.trim() === '') {
-      toast('Please, enter a word', {});
+      Notiflix.Notify.failure('Please entry something');
       return;
     } else {
       const nextParams = value.query !== '' ? { name: value.query } : {};
