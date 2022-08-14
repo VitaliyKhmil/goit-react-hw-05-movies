@@ -2,7 +2,7 @@ import { useState, useEffect, Suspense } from 'react';
 import { useParams, Outlet } from 'react-router-dom';
 import { getDataFilm } from 'api/getDataFilm';
 import { MovieInfo } from 'components/MovieInfo/MovieInfo';
-import { Loader } from 'components/Loader/Loader';
+import { Loader } from 'components/ui/Loader/Loader';
 import { Box } from 'components/ui/Box';
 import AddictionalInfo from 'components/AddictionalInfo/AddictionalInfo';
 import { BackLink } from 'components/ui/BackLink/BackLink';

@@ -1,5 +1,4 @@
 import { useState, useEffect } from 'react';
-import { toast } from 'react-toastify';
 import { getTrendingFilms } from 'api/getTrendingFilms';
 import { MoviesGallery } from 'components/MoviesGallery/MoviesGallery';
 
@@ -8,20 +7,14 @@ const Home = () => {
 
   useEffect(() => {
     async function trending() {
-      try {
-        const { results } = await getTrendingFilms();
-        setTrendingFilms(results);
-      } catch (error) {
-        toast.info(`Something went wrong ${error}`);
-      }
+             const { results } = await getTrendingFilms();
+        setTrendingFilms(results);      
     }
     trending();
   }, []);
 
   return (
-    <div>
-      <MoviesGallery movies={trendingFilms} />
-    </div>
+      <MoviesGallery movies={trendingFilms} />   
   );
 };
 
